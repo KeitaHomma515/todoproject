@@ -1,0 +1,26 @@
+{% extends "todoapp/base.html" %}
+{% block content %}
+
+<div class="header">
+  <h1>New Registration</h1>
+</div>
+
+<form action="" method="POST" style="padding: 20px;">
+  {% csrf_token %}
+  <label for="">User Name</label>
+  {{form.username}}
+  <label for="">
+  <br>Password</label>
+  {{form.password1}}
+  <label for="">
+  <br>Password for confirmation</label>
+  {{form.password2}}
+  <br>
+  <input type="submit" value="New Registration" class="searchButton" />
+</form>
+
+<div class="accountWrapper">
+<p>Already have an account?</p>
+<a href="{% url 'login' %}">Login</a>
+</div>
+{% endblock content%}
